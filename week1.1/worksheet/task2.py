@@ -6,17 +6,21 @@ Name:
 
 name = input("What is your name? ")
 print(f"Welcome to LeedsBank's savings calculator {name}!")
+try:
+    MonthlySavings = int(input("enter your monthly savings amount: "))
 
-MonthlySavings = int(input("enter your monthly savings amount: "))
+    YearlySavings = MonthlySavings*12
 
-YearlySavings = MonthlySavings*12
+    print(f"you will save £{YearlySavings} every year.")
 
-print(f"you will save £{YearlySavings} every year.")
+    interest = YearlySavings*0.008
 
-interest = YearlySavings*0.008
+    TotalSavings = YearlySavings+interest
+    print(f"with interest, you save £{TotalSavings} per year.")
+except: 
+       print("invalid amount")
 
-TotalSavings = YearlySavings+interest
-print(f"with interest, you save £{TotalSavings} per year.")
+
 
 # Ask the user to input an amount they want to save every month - this should be an integer.
 # Validate that they have entered an integer.
