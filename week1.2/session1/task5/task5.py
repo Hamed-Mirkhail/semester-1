@@ -9,9 +9,11 @@ rivers = {
 print(rivers)
 
 # Add two new entries to the rivers database
-
+rivers = {"Narnia": "Doom",
+          "CandyLand": "Sugar"
+}
 # Display all the keys
-
+print(rivers)
 # Display all the values
 
 # Display all the key:value pairs, as tuples
