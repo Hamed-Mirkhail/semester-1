@@ -2,9 +2,9 @@
 
 i = 0
 
-while i < 5:
+while i < 21:
 	print(i)
-	i = i + 1
+	i = i % 4
 
 # Modify the loop to print numbers up to and including 20
 
