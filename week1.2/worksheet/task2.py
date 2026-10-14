@@ -5,7 +5,7 @@ from util import read_numbers
 numbers = read_numbers ()
 
 if len(numbers) == 0:
- sys.exitError("no numbers provided")
+ sys.exitError("Error: no numbers provided")
 
 minimum = min(numbers)
 maximum = max(numbers)
