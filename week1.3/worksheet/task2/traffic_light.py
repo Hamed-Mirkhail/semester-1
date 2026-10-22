@@ -24,7 +24,7 @@ while systime < maxtime:
     elif time < 12:
      state = "green"
     else: 
-        state = amber
+        state = "amber"
     print(f"Time {systime:03} State {state}")
 
 
