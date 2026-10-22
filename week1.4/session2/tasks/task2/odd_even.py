@@ -7,11 +7,16 @@
 
 def odd_even(lstIntegers):
     """
-    This function takes a list of integers and returns the number of
-    odd numbers and the number of even numbers in a list.
+ odd_count = 0
+ even_count= 0
 
-    Args:
-        lstIntegers (list): A list of integers.
+for num in lstIntegers:
+    if num % 2 == 0:
+            even_count += 1
+     else:
+           odd_count += 1
+    
+    return [odd_count, even_count]
 
     Returns:
         list: A list containing [odd_count, even_count].
