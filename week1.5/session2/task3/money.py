@@ -10,11 +10,18 @@ class Money:
         Creates a Money object, given the number of pounds and pence.
         """
         # Add validation code here, to check that
-        # - the pounds parameter is an integer
+        if not isinstance(pounds,int):
+            raise TypeError("pounds must be an integer")
         # - pounds is not negative
         # - the pence parameter is an integer
+        if not isinstance(pence,int):
+            raise TypeError("pence must be an integer")
         # - pence is not negative and not greater than 99
+        if pounds < 0:
+            raise TypeError("pounds must not be negative")
         # Raise appropriate exceptions if any of these are violated
+        if pence < 0 or pence > 99:
+            raise TypeError("Pence must be between 0 and 99")
 
         self.pounds = pounds
         self.pence = pence
@@ -24,6 +31,7 @@ class Money:
         Returns a string representation of this Money.
         """
         # Add code here to return an appropriate string representation
+        return f"£{self.pounds}.{self.pence:02d}"
         # Use the currency symbol for British Pounds Sterling
         # Represent pence with a leading zero if needed (e.g. '05')
 
@@ -32,5 +40,8 @@ class Money:
         Adds this Money to another Money, returning the total.
         """
         # Add code here to check that parameter 'other' is a Money object,
+        #if not isinstance(other, money)
         # add self to other, then return the sum as a new Money object
         # (see README for hints and tips)
+
+        return Money(self.pounds+other.pounds,self.pence+other.pence)
