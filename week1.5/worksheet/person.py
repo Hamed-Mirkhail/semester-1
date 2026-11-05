@@ -7,6 +7,7 @@ class Person:
     A Person, with a name and a date of birth.
     """
     def __init__(self, name, birth):
+        """ make a person checking their name and date of birth"""
         if not isinstance(name, str):
              raise TypeError("name should be a string")
         if name == (""):
