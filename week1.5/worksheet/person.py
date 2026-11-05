@@ -17,8 +17,8 @@ class Person:
         self.birth = birth
             
 
-    def initals(self):
-        """ show uppercase initals of persons name """
+    def initials(self):
+        """ show uppercase initials of persons name """
         return "".join(word[0].upper() for word in self.name.split())
           
     def is_birthday(self):
