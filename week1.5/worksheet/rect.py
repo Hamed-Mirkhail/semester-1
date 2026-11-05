@@ -19,12 +19,13 @@ class Rectangle:
 
     # Implement methods is_square(), area() & perimeter() here
     def is_square(self):
-        return self.width == self.height
         """return true if equal"""
+        return self.width == self.height
     def area(self):
+        """ return area in rectangle"""
         return self.width * self.height
-        """ retrun area in rectangle"""
     def perimeter(self):
+        """ return area in rectangle"""
         return 2 * (self.width + self.height)
         """return perimeter in rectangle"""
     # (See README.md for details of what they should do)
