@@ -5,6 +5,7 @@ class Rectangle:
     A rectangle, with a width and a height.
     """
     def __init__(self, width, height):
+        """ Rectangle with its width and height"""
         if not isinstance(width, int) or not isinstance(height, int):
            raise TypeError("width and height has to be an integer")
         if width <= 0 or height <= 0:
