@@ -12,7 +12,7 @@ class Person:
         if name == (""):
              raise ValueError("name cant be empty")
         if not isinstance(birth, date):
-            raise ("must be a date")
+            raise TypeError("must be a date")
         self.name = name
         self.birth = birth
             
@@ -22,8 +22,8 @@ class Person:
         return "".join(word[0].upper() for word in self.name.split())
           
     def is_birthday(self):
-        today = today.date()
         """check if today is persons birthdate"""
+        today = date.today()
         return self.birth.month == today.month and self.birth.day == today.day
 
     # (see README.md for further details)
