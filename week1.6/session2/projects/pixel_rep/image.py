@@ -60,7 +60,7 @@ class Image:
         self.width = width
         self.height = height
         self.max_value = maximum
-        self.pixels = [[value] * width for _ in range (height)]
+        self.pixels = [[value] * width for _ in range(height)]
 
     def read_pgm(self, filename):
         """
@@ -93,35 +93,30 @@ class Image:
         self.max_value = int(line)
 
     def _parse_pixels(self, imgfile):
-        self.pixels = [int(value) for value in imgfile.read().split()]
+        values = [int(value) for value in imgfile.read().split()]
 
-        if len(self.pixels) != self.width * self.height:
+        if len(values) != self.width * self.height:
             raise ImageError("number of pixels doesn't match image dimensions")
 
-        if any(p < 0 or p > self.max_value for p in self.pixels):
+        if any(p < 0 or p > self.max_value for p in values):
             raise ImageError(f"pixel value outside allowed range (0 to {self.max_value})")
 
         self.pixels = [
             values[row * self.width:(row + 1) * self.width]
-        for row in range(self.height)
-    ]
-    
-
-    
+            for row in range(self.height)
+        ]
 
     def get(self, row, col):
         """
         Returns pixel value at the specified row & column coordinates.
         """
-        index = row * self.width + col
-        return self.pixels[index]
+        return self.pixels[row][col]
 
     def set(self, row, col, value):
         """
         Sets pixel at the specified row & column coordinates to the given value.
         """
-        index = row * self.width + col
-        self.pixels[index] = value
+        self.pixels[row][col] = value
 
     def copy(self):
         """
@@ -144,7 +139,6 @@ class Image:
 
     def _write_pixels(self, imgfile):
         for row in range(self.height):
-            start = row * self.width
-            for value in self.pixels[start:start + self.width]:
+            for value in self.pixels[row]:
                 print(f"{value:4d}", end="", file=imgfile)
             print(file=imgfile)
